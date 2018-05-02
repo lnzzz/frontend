@@ -10,7 +10,7 @@ class Product extends Component {
 	render() {
 		
 		return (
-			<li className="p-2"><Link className="btn btn-primary w-100" to={{ pathname: "/view/"+this.props.name,  params: { product: this.props } }}>{this.props.name}</Link></li>
+			<li className="p-2"><Link className="btn btn-primary w-100" to={{ pathname: "/view/"+this.props.id,  params: { product: this.props } }}>{this.props.name}</Link></li>
 		)
 	}
 }

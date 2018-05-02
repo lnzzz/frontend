@@ -17,11 +17,11 @@ class ProductDetail extends Component {
 			this.setState({ isLoaded: true, error: null, product: this.props.location.params.product })
 		} else {
 			let id = this.props.location.pathname.split("/")[this.props.location.pathname.split("/").length-1];
-			fetch('http://localhost:3001/list-products/'+id)
+			fetch('http://localhost:3001/products/'+id)
 			.then((response) => { return response.json(); })
 			.then((data) => {
-				if (data.length > 0) {
-					this.setState({ isLoaded: true, error: null, product: data[0] });
+				if (data) {
+					this.setState({ isLoaded: true, error: null, product: data });
 				} else {
 					this.setState({ isLoaded: true, error: "Product doesnt exist", product: null });
 				}

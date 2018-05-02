@@ -24,14 +24,14 @@ class Home extends Component {
 	}
 	
 	componentWillMount() {
-		fetch('http://localhost:3001/list-products')
+		fetch('http://localhost:3001/products')
 		.then(this.handleRestErrors)
 		.then((data) => { this.setState({ productsLoaded: true, products: data }); })
 		.catch((error) => {
 			this.setState({ productsLoaded: true, productsErrors: true });
 		});
 		
-		fetch('http://localhost:3001/list-categories')
+		fetch('http://localhost:3001/categories')
 		.then(this.handleRestErrors)
 		.then((data) => { this.setState({ categoriesLoaded: true, categories: data }); })
 		.catch((error) => {

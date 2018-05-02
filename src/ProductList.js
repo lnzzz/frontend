@@ -14,8 +14,8 @@ class ProductList extends Component {
 				return (
 				  <Product
 					key={product._id}
+					id={product._id}
 					name={product.name}
-					slug={product.slug}
 					price={product.price}
 					list_price={product.list_price}
 					brand={product.brand}
